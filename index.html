@@ -3,249 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مبادرة حماة الوطن الصغار - الابتدائية الرابعة والستون</title>
+    <title>مبادرة حماة الوطن الصغار - تفعيل المادة 34</title>
+    <!-- مكتبة التنسيقات الحديثة Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- خط القاهرة العصري -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #1b4332;
-            --secondary-color: #2d6a4f;
-            --accent-color: #d4af37;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #2b2b2b;
-        }
         body {
-            font-family: 'Cairo', Tahoma, sans-serif, Arial;
-            background: linear-gradient(135deg, #f0f4f1 0%, #e2ece9 100%);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            direction: rtl;
-            text-align: right;
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            color: #1e293b;
+            min-height: 100vh;
         }
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            padding: 30px;
-            border-top: 6px solid var(--primary-color);
-        }
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 25px;
-        }
-        .logo-img {
-            width: 90px;
-            height: 90px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-        h1 {
-            color: var(--primary-color);
-            font-size: 24px;
-            margin: 10px 0 5px;
-        }
-        .school-info {
-            font-size: 14px;
-            color: #555;
-            background: #f4f6f5;
-            padding: 8px 15px;
-            border-radius: 8px;
-            display: inline-block;
-            margin-top: 5px;
-        }
-        .step-section {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-        .step-section.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .card {
-            background: #f9fbf9;
-            border: 1px solid #e1e8e4;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .btn {
-            background: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            border-radius: 10px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            transition: background 0.3s;
-            margin-top: 15px;
-        }
-        .btn:hover {
-            background: var(--primary-color);
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-family: inherit;
-            box-sizing: border-box;
-        }
-        .option-label {
-            display: block;
-            background: white;
-            border: 2px solid #ddd;
-            padding: 12px 15px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .option-label:hover {
-            border-color: var(--secondary-color);
-            background: #f0f7f4;
-        }
-        .option-label input {
-            width: auto;
-            margin-left: 10px;
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-certificate, #printable-certificate * {
+                visibility: visible;
+            }
+            #printable-certificate {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
         }
     </style>
 </head>
-<body>
+<body class="p-4 md:p-8">
 
-<div class="container">
-    <div class="header">
-        <!-- شعار المملكة الرسمي المعتمد -->
-        <img src="https://upload.wikimedia.org/wikipedia5/commons/thumb/0/0d/Emblem_of_Saudi_Arabia.svg/1200px-Emblem_of_Saudi_Arabia.svg.png" alt="شعار المملكة" class="logo-img" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Emblem_of_Saudi_Arabia.svg/200px-Emblem_of_Saudi_Arabia.svg.png'">
-        <h1>مبادرة حماة الوطن الصغار</h1>
-        <div class="school-info">
-            <strong>الابتدائية الرابعة والستون</strong><br>
-            مديرة المدرسة: أ. عزيزة صالح البلوي | الوكيلة: أ. ريم الغرير - أ. تغريد الجهني
-        </div>
-    </div>
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-green-100">
 
-    <!-- الخطوة 1: تسجيل بيانات الطالبة -->
-    <div id="step-1" class="step-section active">
-        <div class="card">
-            <h3>تسجيل بيانات الطالبة البطلة</h3>
-            <p>سجلي بياناتكِ يا بطلة لنبدأ محطات الولاء والوعي الفكري:</p>
-            <label>اسم الطالبة الثلاثي:</label>
-            <input type="text" id="studentName" placeholder="اكتبي اسمك هنا...">
+        <!-- الهيدر الرسمي وشعار المملكة -->
+        <div class="bg-gradient-to-r from-emerald-800 to-green-900 text-white p-6 text-center relative">
+            <div class="absolute top-4 right-4 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold">المملكة العربية السعودية</div>
+            <div class="absolute top-4 left-4 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold">وزارة التعليم</div>
 
-            <label>الصف الدراسي:</label>
-            <select id="studentGrade">
-                <option value="">اختاري صفك الدراسي...</option>
-                <option value="اول ابتدائي">الاول الابتدائي</option>
-                <option value="ثاني ابتدائي">الثاني الابتدائي</option>
-                <option value="ثالث ابتدائي">الثالث الابتدائي</option>
-                <option value="رابع ابتدائي">الرابع الابتدائي</option>
-                <option value="خامس ابتدائي">الخامس الابتدائي</option>
-                <option value="سادس ابتدائي">السادس الابتدائي</option>
-            </select>
+            <h1 class="text-2xl md:text-3xl font-black mt-2 mb-1">مبادرة حماة الوطن الصغار</h1>
+            <p class="text-green-200 text-sm md:text-base">تفعيل المادة 34 لتعزيز القيم الوطنية والولاء لولاة الأمر</p>
 
-            <button class="btn" onclick="startJourney()">ابئي الرحلة الوطنية</button>
-        </div>
-    </div>
-
-    <!-- الخطوة 2: محطة افعلها -->
-    <div id="step-2" class="step-section">
-        <div class="card">
-            <h3>المحطة الأولى: افعلها (السلوك الإيجابي)</h3>
-            <p>اختاري الممارسة الصحيحة التي تعبر عن مسؤوليتك الوطنية:</p>
-            <label class="option-label"><input type="radio" name="afalha" value="1"> أحافظ على بيئة المدرسة نظيفة وآمنة وأعتبرها بيتي الثاني.</label>
-            <label class="option-label"><input type="radio" name="afalha" value="2"> ألتزم بالانضباط المدرسي وأحترم أنظمة وقوانين الوطن.</label>
-            <label class="option-label"><input type="radio" name="afalha" value="3"> أتعاون مع زميلاتي ومعلماتي لنشر القيم والأخلاق الحسنة.</label>
-            <button class="btn" onclick="nextStep(3)">التالي: صد الشائعات</button>
-        </div>
-    </div>
-
-    <!-- الخطوة 3: اختاري التصرف السليم (صد الشائعات) -->
-    <div id="step-3" class="step-section">
-        <div class="card">
-            <h3>المحطة الثانية: اختاري التصرف السليم (صد الشائعات)</h3>
-            <p>وصلتكِ رسالة أو معلومة غير متأكدة من صحتها عن الوطن أو المدرسة، ماذا تفعلين؟</p>
-            <label class="option-label"><input type="radio" name="behavior" value="wrong"> أنشرها بسرعة لزميلاتي في القروب دون التأكد.</label>
-            <label class="option-label"><input type="radio" name="behavior" value="right"> أتجاهلها ولا أتقبلها وأتحقق من مصادرها الرسمية الموثوقة (صد الشائعات).</label>
-            <label class="option-label"><input type="radio" name="behavior" value="wrong2"> أحتفظ بها وأخبرها لصديقتي سرًا.</label>
-            <button class="btn" onclick="nextStep(4)">التالي: عبري عن حبك للوطن</button>
-        </div>
-    </div>
-
-    <!-- الخطوة 4: عبري عن حبك للوطن -->
-    <div id="step-4" class="step-section">
-        <div class="card">
-            <h3>المحطة الثالثة: عبري عن حبك للوطن</h3>
-            <p>اختاري عبارة الفخر الوطنية المناسبة، أو اكتبِ كلمتكِ الخاصة:</p>
-            <label class="option-label"><input type="radio" name="love" value="1"> وطني العطاء والخير، دمت شامخاً يا سعود العز.</label>
-            <label class="option-label"><input type="radio" name="love" value="2"> أرواحنا وداننا تفداك يا تراب الوطن الطهور.</label>
-            <label class="option-label"><input type="radio" name="love" value="3"> سمعاً وطاعة لولاة أمرنا وحماة أمننا.</label>
-
-            <label style="margin-top: 15px; display:block;">أو اكتبي كلمتكِ الخاصة للوطن:</label>
-            <textarea id="customLove" rows="3" placeholder="اكتبي مشاعركِ الوطنية هنا يا بطلة..."></textarea>
-
-            <button class="btn" onclick="nextStep(5)">إتمام المبادرة وختم العهد</button>
-        </div>
-    </div>
-
-    <!-- الخطوة 5: الختام وشهادة الشكر -->
-    <div id="step-5" class="step-section">
-        <div class="card" style="text-align: center;">
-            <h2 style="color: var(--primary-color);">🎉 كفو يا بطلة الوطن!</h2>
-            <p id="congratsText" style="font-size: 16px; line-height: 1.6;"></p>
-            <div style="background: #eef5f1; padding: 15px; border-radius: 10px; margin-top: 20px; border: 2px dashed var(--secondary-color);">
-                <strong>ختم العهد والولاء:</strong><br>
-                أنا الطالبة البطلة أُعهد لبلدي الحبيب بالغالي والنفيس، وبحفظ أمنه وفكره وسلوكه.<br>
-                <em>تم توثيق مشاركتكِ بنجاح مع إدارة الابتدائية الرابعة والستين</em>
+            <!-- الاعتمادات والقيادة المدرسية الرسمية -->
+            <div class="mt-4 pt-4 border-t border-green-700/50 flex flex-wrap justify-center gap-4 text-xs md:text-sm text-green-100">
+                <span>مديرة المدرسة: <strong>عزيزة صالح البلوي</strong></span>
+                <span>•</span>
+                <span>وكيلة الشؤون التعليمية: <strong>ريم ابراهيم الغرير</strong></span>
+                <span>•</span>
+                <span>وكيلة الشؤون الطلابية: <strong>تغريد طريريش الجهني</strong></span>
             </div>
-            <button class="btn" onclick="location.reload()" style="background: #555; margin-top: 20px;">تسجيل طالبة أخرى</button>
+        </div>
+
+        <!-- محتوى التطبيق -->
+        <div class="p-6 md:p-8">
+
+            <!-- شاشة إدخال اسم الطالبة -->
+            <div id="step-start" class="text-center py-6">
+                <div class="mb-6">
+                    <span class="bg-green-100 text-green-800 text-sm font-bold px-4 py-1.5 rounded-full">أهلاً بك يا بطلة الوطن</span>
+                    <h2 class="text-xl font-bold mt-4 text-slate-800">اكتبي اسمك الثلاثي لنبدأ الرحلة الوطنية معاً:</h2>
+                </div>
+                <input type="text" id="student-name" placeholder="مثال: ريم أحمد العتيبي" class="w-full md:w-96 px-4 py-3 border-2 border-green-300 rounded-xl text-center text-lg focus:outline-none focus:border-green-600 mb-4 shadow-sm">
+                <div>
+                    <button onclick="startJourney()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">انطلقي في الرحلة 🚀</button>
+                </div>
+            </div>
+
+            <!-- المحطة الأولى: افعلها -->
+            <div id="step-1" class="hidden">
+                <div class="flex justify-between items-center mb-6 border-b pb-3">
+                    <h3 class="text-lg font-bold text-emerald-800">المحطة الأولى: افعلها (السلوكيات الوطنية)</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-bold">1 من 3</span>
+                </div>
+                <p class="text-slate-700 mb-4 font-semibold">اضغطي على السلوك الصحيح الذي يعبر عن حبك وخدمتك لوطنك الغالي:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <button onclick="selectAction(true)" class="p-4 border-2 border-slate-200 hover:border-emerald-600 rounded-xl text-right transition bg-slate-50 hover:bg-green-50 font-medium">أحافظ على نظافة بيئتي ومدرستي ومرافق وطني.</button>
+                    <button onclick="selectAction(false)" class="p-4 border-2 border-slate-200 hover:border-emerald-600 rounded-xl text-right transition bg-slate-50 hover:bg-green-50 font-medium">أهمل أدواتي المدرسية وأعيث فساداً في الحديقة العامة.</button>
+                </div>
+                <div id="feedback-1" class="font-bold text-center mb-4"></div>
+                <div class="text-center">
+                    <button id="next-btn-1" onclick="nextStep(2)" class="hidden bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2.5 rounded-xl">المحطة التالية ➡️</button>
+                </div>
+            </div>
+
+            <!-- المحطة الثانية: اختر السلوك الصحيح -->
+            <div id="step-2" class="hidden">
+                <div class="flex justify-between items-center mb-6 border-b pb-3">
+                    <h3 class="text-lg font-bold text-emerald-800">المحطة الثانية: اختاري السلوك الصحيح</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-bold">2 من 3</span>
+                </div>
+                <p class="text-slate-700 mb-4 font-semibold">ما هو التصرف الوطني السليم عند سماع النشيد الوطني في المدرسة؟</p>
+                <div class="space-y-3 mb-6">
+                    <button onclick="selectQuiz(false)" class="w-full p-3 border-2 border-slate-200 hover:border-emerald-600 rounded-xl text-right transition bg-slate-50 hover:bg-green-50">الجلوس على المقعد وعدم الاهتمام.</button>
+                    <button onclick="selectQuiz(true)" class="w-full p-3 border-2 border-slate-200 hover:border-emerald-600 rounded-xl text-right transition bg-slate-50 hover:bg-green-50">الوقوف باحترام واعتزاز وافتخار بالوطن.</button>
+                </div>
+                <div id="feedback-2" class="font-bold text-center mb-4"></div>
+                <div class="text-center">
+                    <button id="next-btn-2" onclick="nextStep(3)" class="hidden bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2.5 rounded-xl">المحطة الأخيرة ➡️</button>
+                </div>
+            </div>
+
+            <!-- المحطة الثالثة: عبر عن حبك للوطن (رسائل جاهزة + كتابة حرة) -->
+            <div id="step-3" class="hidden">
+                <div class="flex justify-between items-center mb-6 border-b pb-3">
+                    <h3 class="text-lg font-bold text-emerald-800">المحطة الثالثة: عبّري عن حبك للوطن</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-bold">3 من 3</span>
+                </div>
+
+                <p class="text-slate-700 mb-3 font-semibold">اختاري إحدى الرسائل الوطنية الجاهزة، أو اكتبِ مشاعرك الخاصة بالأسفل:</p>
+
+                <!-- رسائل جاهزة للاختيار -->
+                <div class="grid grid-cols-1 gap-3 mb-4">
+                    <button onclick="chooseMessage('دمت يا وطني شامخاً عزيزاً، وكل عام وأنت أمان وفخر.')" class="p-3 border-2 border-green-200 hover:border-emerald-600 rounded-xl text-right transition bg-green-50/50 hover:bg-green-100 text-sm font-medium text-emerald-900">
+                        💌 "دمت يا وطني شامخاً عزيزاً، وكل عام وأنت أمان وفخر."
+                    </button>
+                    <button onclick="chooseMessage('فخورة بكوني ابنة هذا الوطن العظيم، وفداء لتربه الطهور.')" class="p-3 border-2 border-green-200 hover:border-emerald-600 rounded-xl text-right transition bg-green-50/50 hover:bg-green-100 text-sm font-medium text-emerald-900">
+                        💌 "فخورة بكوني ابنة هذا الوطن العظيم، وفداء لتربه الطهور."
+                    </button>
+                    <button onclick="chooseMessage('العهد والبيعة والولاء لولاة أمرنا، حفظ الله مملكتنا الغالية.')" class="p-3 border-2 border-green-200 hover:border-emerald-600 rounded-xl text-right transition bg-green-50/50 hover:bg-green-100 text-sm font-medium text-emerald-900">
+                        💌 "العهد والبيعة والولاء لولاة أمرنا، حفظ الله مملكتنا الغالية."
+                    </button>
+                </div>
+
+                <!-- مكان لكتابة المشاعر الخاصة -->
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-slate-600 mb-1">أو اكتبي مشاعرك الخاصة بأسلوبك:</label>
+                    <textarea id="love-message" rows="3" class="w-full p-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-emerald-600 text-sm" placeholder="اكتبي هنا رسالتك الخاصة للوطن..."></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="finishJourney()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-xl shadow-lg">إنهاء المبادرة والحصول على الشهادة 🎓</button>
+                </div>
+            </div>
+
+            <!-- شاشة شهادة الشكر والتقدير (مفعلة وجاهزة للطباعة) -->
+            <div id="step-certificate" class="hidden text-center py-4">
+                <div id="printable-certificate" class="border-8 border-double border-emerald-800 p-8 rounded-2xl bg-gradient-to-b from-white to-green-50 max-w-2xl mx-auto shadow-inner relative">
+                    <div class="text-emerald-800 font-bold text-sm tracking-widest mb-1">المملكة العربية السعودية - وزارة التعليم</div>
+                    <div class="text-slate-600 text-xs mb-4">الابتدائية الرابعة و الستون</div>
+
+                    <h2 class="text-3xl font-black text-emerald-900 mb-2 mt-4">شهادة شكر وتقدير</h2>
+                    <p class="text-slate-600 italic mb-6">تمنح هذه الشهادة فخراً واعتزازاً للطالبة المتميزة:</p>
+
+                    <div id="display-name" class="text-2xl font-black text-emerald-700 border-b-2 border-emerald-300 pb-2 inline-block px-8 mb-4">اسم الطالبة</div>
+
+                    <p class="text-slate-700 text-xs md:text-sm font-medium text-emerald-800 bg-green-100/60 p-3 rounded-xl mb-6 max-w-lg mx-auto" id="display-message">
+                        رسالة الطالبة للوطن
+                    </p>
+
+                    <p class="text-slate-700 text-xs md:text-sm leading-relaxed mb-8 px-4">
+                        لمشاركتها المتميزة وإتمامها بنجاح محطات مبادرة <strong>"حماة الوطن الصغار"</strong> لتفعيل المادة 34 وتعزيز القيم الوطنية والولاء لولاة أمرنا حفظهم الله.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-2 mt-8 pt-6 border-t border-emerald-200 text-[11px] md:text-xs font-bold text-slate-700 text-center">
+                        <div>
+                            <p class="text-slate-500">مديرة المدرسة</p>
+                            <p class="text-emerald-900 mt-1">عزيزة صالح البلوي</p>
+                        </div>
+                        <div>
+                            <p class="text-slate-500">وكيلة الشؤون التعليمية</p>
+                            <p class="text-emerald-900 mt-1">ريم ابراهيم الغرير</p>
+                        </div>
+                        <div>
+                            <p class="text-slate-500">وكيلة الشؤون الطلابية</p>
+                            <p class="text-emerald-900 mt-1">تغريد طريريش الجهني</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- أزرار التحكم بعد الانتهاء -->
+                <div class="mt-8 flex justify-center gap-4">
+                    <button onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-xl shadow-lg flex items-center gap-2">🖨️ طباعة الشهادة الرسمية</button>
+                    <button onclick="location.reload()" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-6 py-3 rounded-xl">إعادة المشاركة</button>
+                </div>
+            </div>
+
         </div>
     </div>
 
-</div>
+    <script>
+        let studentFullName = "";
+        let selectedLoveMessage = "دمت يا وطني شامخاً عزيزاً، وكل عام وأنت أمان وفخر.";
 
-<script>
-    let studentData = { name: '', grade: '' };
-
-    function startJourney() {
-        const name = document.getElementById('studentName').value.trim();
-        const grade = document.getElementById('studentGrade').value;
-
-        if (!name) {
-            alert('الرجاء إدخال اسم الطالبة الثلاثي');
-            return;
-        }
-        if (!grade) {
-            alert('الرجاء اختيار الصف الدراسي');
-            return;
+        function startJourney() {
+            const nameInput = document.getElementById("student-name").value.trim();
+            if (nameInput === "") {
+                alert("الرجاء إدخال اسم الطالبة الثلاثي أولاً!");
+                return;
+            }
+            studentFullName = nameInput;
+            document.getElementById("step-start").classList.add("hidden");
+            document.getElementById("step-1").classList.remove("hidden");
         }
 
-        studentData.name = name;
-        studentData.grade = grade;
-        nextStep(2);
-    }
-
-    function nextStep(stepNum) {
-        document.querySelectorAll('.step-section').forEach(el => el.classList.remove('active'));
-        document.getElementById('step-' + stepNum).classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-
-        if(stepNum === 5) {
-            document.getElementById('congratsText').innerHTML =
-                `تهانينا الحارة للطالبة المتميزة: <strong>${studentData.name}</strong><br>` +
-                `من صف: <strong>${studentData.grade}</strong><br>` +
-                `لقد اجتزتِ محطات مبادرة "حماة الوطن" بنجاح وعي وولاء تام.`;
+        function selectAction(isCorrect) {
+            const fb = document.getElementById("feedback-1");
+            if (isCorrect) {
+                fb.innerHTML = "✅ أحسنتِ! تصرف وطني رائع وممتاز.";
+                fb.className = "text-emerald-600 font-bold text-center mb-4";
+                document.getElementById("next-btn-1").classList.remove("hidden");
+            } else {
+                fb.innerHTML = "❌ إجابة غير دقيقة، السلوك الوطني هو الحفاظ على بيئة ومرافق الوطن.";
+                fb.className = "text-red-500 font-bold text-center mb-4";
+            }
         }
-    }
-</script>
 
+        function selectQuiz(isCorrect) {
+            const fb = document.getElementById("feedback-2");
+            if (isCorrect) {
+                fb.innerHTML = "✅ إجابة صحيحة وصائبة تماماً!";
+                fb.className = "text-emerald-600 font-bold text-center mb-4";
+                document.getElementById("next-btn-2").classList.remove("hidden");
+            } else {
+                fb.innerHTML = "❌ حاولي مرة أخرى، الوقوف باحترام هو التعبير الأصح.";
+                fb.className = "text-red-500 font-bold text-center mb-4";
+            }
+        }
+
+        function nextStep(stepNum) {
+            if (stepNum === 2) {
+                document.getElementById("step-1").classList.add("hidden");
+                document.getElementById("step-2").classList.remove("hidden");
+            } else if (stepNum === 3) {
+                document.getElementById("step-2").classList.add("hidden");
+                document.getElementById("step-3").classList.remove("hidden");
+            }
+        }
+
+        function chooseMessage(msg) {
+            selectedLoveMessage = msg;
+            document.getElementById("love-message").value = msg;
+        }
+
+        function finishJourney() {
+            const customMsg = document.getElementById("love-message").value.trim();
+            if (customMsg !== "") {
+                selectedLoveMessage = customMsg;
+            }
+            document.getElementById("display-name").innerText = studentFullName;
+            document.getElementById("display-message").innerText = `"${selectedLoveMessage}"`;
+            document.getElementById("step-3").classList.add("hidden");
+            document.getElementById("step-certificate").classList.remove("hidden");
+        }
+    </script>
 </body>
 </html>
