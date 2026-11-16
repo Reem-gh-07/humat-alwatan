@@ -109,7 +109,7 @@
 
                 <div>
                     <h2 class="text-base font-bold text-white">كيف تظهرين حبك لوطتك في مدرستك كل يوم؟</h2>
-                    <p class="text-xs text-emerald-300 mt-0.5">اضغطي على زر (فعلناها ⭐) أمام الأعمال الجميلة التي تققومين بها لتضيء نجومك:</p>
+                    <p class="text-xs text-emerald-300 mt-0.5">اضغطي على زر (فعلناها ⭐) أمام الأعمال الجميلة التي تقومين بها لتضيء نجومك:</p>
                 </div>
 
                 <div class="bg-emerald-950/80 p-3 rounded-xl border border-emerald-800 text-center">
@@ -192,6 +192,11 @@
                     </div>
                 </div>
 
+                <!-- مكان ظهور رسالة الخطأ الحمراء -->
+                <div id="quiz-error" class="hidden bg-red-950/80 border border-red-500 text-red-200 p-3 rounded-xl text-center font-bold text-xs">
+                    ⚠️ يرجى التأكد من اختيار الإجابات الصحيحة في جميع الأسئلة لتتمكني من المتابعة!
+                </div>
+
                 <button onclick="nextStep(3)" class="w-full bg-red-700 hover:bg-red-800 text-white font-bold py-3 rounded-xl shadow-lg transition text-sm">
                     تأكيد إجابات الوعي والانتقال لوثيقة العهد 📜
                 </button>
@@ -208,7 +213,7 @@
                     <h3 class="font-black text-emerald-900 text-sm">وثيقة العهد</h3>
                     <p class="text-[10px] text-emerald-800 font-bold">حماة الوطن الصغار (تفعيل المادة 34) 🇸🇦</p>
                     <p class="text-[11px] leading-relaxed text-slate-800 font-medium">
-                        «أنا ابنةُ هذا الوّطنِ الغالي، أُتعهّدُ أَمامَ اللَهِ ثُمَّ أَمامَ وطني: أن أُحفظَ أمنَ وطني، وأكونَ عيئاً ساهرةً على سلامته، وألا أنشُدَ شائعةً، ولا أُعيدَ إرسالَ خبرٍ قَبْلَ التَحققِ مِنْ مَصْدَرِهِ، وأن أُفْخَرَ بِقِيادتي الرَشيدةِ، وأن أكونَ صورةً مُشَرّفَةً لوطني في أخلاقي وعلمي وكليتي».
+                        «أنا ابنةُ هذا الوّطنِ الغالي، أُتعهّدُ أَمامَ اللَهِ ثُمَّ أَمامَ وطني: أن أُحفظَ أمنَ وطني، وأكونَ عيئاً ساهرةً على سلامته، وألا أنشُدَ شائعةً، ولا أُعيدَ إرسالَ خبرٍ قَبْلَ التَحققِ مِنْ مَصْدَرِهِ، وأن أُفْخَرَ بِقِيادتي الرَشيدةِ، وأن أكونَ صورةً مُشَرّفَةً لوطني في أخلاقي وعلمي».
                     </p>
                     <div class="text-emerald-900 font-bold text-xs">﴿رَبِّ اجْعَلْ هَذَا الْبَلَدَ آمِناً﴾</div>
                 </div>
@@ -337,14 +342,18 @@
                 document.getElementById("step-1").classList.add("hidden");
                 document.getElementById("step-2").classList.remove("hidden");
             } else if (step === 3) {
-                // التحقق من الأسئلة
                 let q1 = document.querySelector('input[name="q1"]:checked');
                 let q2 = document.querySelector('input[name="q2"]:checked');
                 let q3 = document.querySelector('input[name="q3"]:checked');
-                if(!q1 || !q2 || !q3) {
-                    alert("الرجاء الإجابة على كافة أسئلة أصدّ الشائعات أولاً!");
+                let errorBox = document.getElementById("quiz-error");
+
+                // التحقق من أن جميع الأسئلة تم اختيار الإجابة الصحيحة لها
+                if (!q1 || !q2 || !q3 || q1.value !== "correct" || q2.value !== "correct" || q3.value !== "correct") {
+                    errorBox.classList.remove("hidden");
                     return;
                 }
+
+                errorBox.classList.add("hidden");
                 document.getElementById("step-2").classList.add("hidden");
                 document.getElementById("step-3").classList.remove("hidden");
             }
